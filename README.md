@@ -8,7 +8,7 @@ to the target dataset.
 
 ![Ostomachion](Ostomachion2.jpg)
 
-Bone Fight is based on [Tangram](https://github.com/broadinstitute/Tangram) (Biancalani* T., Scalia* G. et al. 2020 - Deep learning and alignment of spatially-resolved whole transcriptomes of single cells in the mouse brain with Tangram. biorXiv doi:10.1101/2020.08.29.272831; photo courtesy of [Oh so souvenir](https://ohsosouvenir.com/products/gadgets/ostomachion-puzzle-game-detail).
+Bone Fight is based on [Tangram](https://github.com/broadinstitute/Tangram) (Biancalani* T., Scalia* G. et al. 2020 - Deep learning and alignment of spatially-resolved whole transcriptomes of single cells in the mouse brain with Tangram. biorXiv doi:10.1101/2020.08.29.272831; photo courtesy of [Oh so souvenir](https://ohsosouvenir.com/products/gadgets/ostomachion-puzzle-game-detail)).
 
 Bone Fight extends and generalizes standard Tangram in several ways (see below). It's named after a game similar to Tangram, first described by 
 Aristotle who called it [Ostomachion](https://en.wikipedia.org/wiki/Ostomachion) - "bone fight". It's believed that the pieces were made of bone, and that
