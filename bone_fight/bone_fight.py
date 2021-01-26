@@ -55,7 +55,7 @@ class BoneFight:
 
 		return volume_loss + t_expression_loss + f_expression_loss + regularization_loss
 
-	def fit(self, num_epochs: int, learning_rate: float = 0.1) -> None:
+	def fit(self, num_epochs: int = 100, learning_rate: float = 0.1) -> None:
 		"""
 		Fit the generalized Tangram model
 
