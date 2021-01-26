@@ -85,21 +85,23 @@ class BoneFight:
 
 	def transform(self, X: np.ndarray) -> np.ndarray:
 		"""
-		Transform a feature tensor X from the source view (a) to the target view (b)
+		Transform a label tensor X from the source view (a) to the target view (b)
 
 		Args:
-			X	Input tensor with shape a.tiles_shape + (n_features,)
+			X	Label tensor with shape a.tiles_shape + (n_labels,)
 
 		Returns:
-			The transformed tensor, with shape b.tiles_shape + (n_features,)
+			The transformed tensor, with shape b.tiles_shape + (n_labels,)
 		
 		Remarks:
 			The first dimensions of the input matrix should correspond to those
 			of the input tensor (a); for example, an image stack would have 
 			three dimensions, while a single-cell dataset would have one. The 
-			final dimension corresponds to all the distinct features that 
+			final dimension corresponds to all the distinct labels that 
 			you want to transfer; for example, to transfer a single feature,
 			the last dimension should have length 1. 
 		"""
+		assert X.ndim == self.a.rank, f"Rank {X.ndim} of labels matrix does not match rank {self.a.rank} of source view"
+		assert X.shape[:-1] == self.a.tiles_shape, f"All but the last dimension of label tensor must match shape of the source view, but {X.shape[:-1]} != {self.a.tiles_shape}"
 		Y = self.M @ X.reshape(-1, X.shape[-1])
 		return Y.reshape(self.b.tiles_shape + (X.shape[-1],))

@@ -30,6 +30,10 @@ class View:
 		return self.X.shape
 
 	@property
+	def rank(self) -> int:
+		return self.X.ndim
+
+	@property
 	def tiles_shape(self) -> Tuple[int, ...]:
 		return self.X.shape[:-1]
 
