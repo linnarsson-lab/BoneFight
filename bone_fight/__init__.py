@@ -1,2 +1,2 @@
-from .general_tangram import GeneralTangram
+from .bone_fight import BoneFight
 from .view import View
