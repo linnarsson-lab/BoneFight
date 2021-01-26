@@ -7,7 +7,7 @@ from setuptools import find_packages, setup
 __version__ = '0.1.0'
 
 setup(
-	name="general_tangram",
+	name="bonefight",
 	version=__version__,
 	packages=find_packages(),
 	python_requires='>=3.7',
@@ -17,9 +17,9 @@ setup(
 	# metadata for upload to PyPI
 	author="Sten Linnarsson",
 	author_email="sten.linnarsson@ki.se",
-	description="General Tangram, an algorithm for aligning omics datasets",
+	description="Bone Fight, an algorithm for aligning omics datasets",
 	license="BSD",
-	keywords="tangram spatial omics transcriptomics bioinformatics",
+	keywords="ostomachion spatial omics transcriptomics bioinformatics",
 	url="https://github.com/linnarsson-lab/GeneralTangram",
-	download_url=f"https://github.com/linnarsson-lab/GeneralTangram/archive/{__version__}.tar.gz",
+	download_url=f"https://github.com/linnarsson-lab/BoneFight/archive/{__version__}.tar.gz",
 )
