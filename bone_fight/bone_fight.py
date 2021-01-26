@@ -55,7 +55,7 @@ class BoneFight:
 
 		return volume_loss + t_expression_loss + f_expression_loss + regularization_loss
 
-	def fit(self, num_epochs: int = 100, learning_rate: float = 0.1) -> None:
+	def fit(self, num_epochs: int = 100, learning_rate: float = 0.1) -> "BoneFight":
 		"""
 		Fit the generalized Tangram model
 
@@ -80,6 +80,8 @@ class BoneFight:
 		# take final softmax w/o computing gradients
 		with torch.no_grad():
 			self.M = softmax(self._M, dim=1).cpu().numpy().T
+
+		return self
 
 	def transform(self, X: np.ndarray) -> np.ndarray:
 		"""

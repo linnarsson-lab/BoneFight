@@ -30,7 +30,7 @@ extreme hardware.
 
 Bone Fight introduces a volume prior on the source dataset, which sets the expected "volume" of each entity in the
 dataset. For single-cell data, a uniform prior makes sense (all cells occupy the same spatial volume) and the
-results should be identical with standard Tangram.
+results should be identical to standard Tangram.
 
 However, exploiting the volume prior makes it possible to align not just single cells with spatial data, but also:
 
@@ -122,7 +122,7 @@ model = bf.BoneFight(a, b)
 model.fit()
 ```
 
-The `.fit()` method return the model itself, so you can write more succinctly:
+The `.fit()` method returns the model itself, so you can write more succinctly:
 
 ```python
 model = bf.BoneFight(a, b).fit()
