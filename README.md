@@ -147,7 +147,7 @@ from the source dataset to the target.
 The first thing you want to transfer is probably the spatial distribution of each source entity.
 You can do this by transforming the identity matrix (diagonal ones):
 
-```
+```python
 # Assume source dataset is (n_clusters, n_genes)
 # Assume target dataset is (x, y, n_genes)
 
