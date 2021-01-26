@@ -148,6 +148,7 @@ The first thing you want to transfer is probably the spatial distribution of eac
 You can do this by transforming the identity matrix (diagonal ones):
 
 ```python
+import numpy as np
 # Assume source dataset is (n_clusters, n_genes)
 # Assume target dataset is (x, y, n_genes)
 
