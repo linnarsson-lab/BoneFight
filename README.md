@@ -165,8 +165,12 @@ spatial data).
 You can also transfer any other property of the source dataset in the same way. 
 For example, you can transfer genes from a source
 single-cell dataset to a spatial dataset where they were not measured. Just
-create a label matrix (not vector) for the 'labels' (i.e. gene expression vectors)
-you want to transfer, and call `model.transform(labels)`. 
+create a label tensor for the 'labels' (i.e. gene expression vectors)
+you want to transfer, and call `model.transform(labels)`. Note that the shape of
+the labels tensor must match the shape of the source dataset in the first N - 1
+dimensions, and the last dimension should be the number of different labels you want
+to transfer. For example, if you want to transfer a single gene expression vector, 
+the label tensor should be shaped (n_cells, 1), not (n_cells,).
 
 To transfer categorical labels, use ['one-hot'](https://en.wikipedia.org/wiki/One-hot) encoding.
 
