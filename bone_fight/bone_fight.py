@@ -6,10 +6,10 @@ from tqdm import trange
 from .view import View
 
 
-class GeneralTangram:
+class BoneFight:
 	def __init__(self, a: View, b: View, lambda_v: float = 1, lambda_t: float = 1, lambda_f: float = 1, lambda_r: float = 0, device: str = "cpu") -> None:
 		"""
-		Construct a generalized Tangram model
+		Construct a Bone Fight model
 
 		Args:
 			a			The source View
