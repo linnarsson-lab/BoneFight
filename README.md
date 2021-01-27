@@ -10,15 +10,15 @@ to the target dataset.
 
 Bone Fight is based on [Tangram](https://github.com/broadinstitute/Tangram) (Biancalani* T., Scalia* G. et al. 2020 - Deep learning and alignment of spatially-resolved whole transcriptomes of single cells in the mouse brain with Tangram. biorXiv doi:10.1101/2020.08.29.272831; photo courtesy of [Oh so souvenir](https://ohsosouvenir.com/products/gadgets/ostomachion-puzzle-game-detail)).
 
-Bone Fight extends and generalizes standard Tangram in several ways (see below). It's named after a game similar to Tangram, first described by 
-Aristotle who called it [Ostomachion](https://en.wikipedia.org/wiki/Ostomachion) - "bone fight". It's believed that the pieces were made of bone, and that
-two players would compete to see who would be the quickest to create a target figure.
+All credit for the fundamental Tangram algorithm goes to the original authors and the Regev lab. Bone Fight extends and generalises standard 
+Tangram in several useful ways (see below). It's named after a game similar to Tangram, first described by 
+Aristotle who called it [Ostomachion](https://en.wikipedia.org/wiki/Ostomachion) - "bone fight". It's believed that the pieces were made of bone, and that two players would compete to see who would be the quickest to create a target figure.
 
 ## Volume priors
 
 Tangram was designed to map single-cell data to spatial gene expression data. In order
 to allocate cells to voxels, the algorithm accepts a density prior on the target (spatial) dataset,
-which allows variation in the cell density across space. However, the source dataset
+which allows variation in the cell density across space. In contrast, the source dataset
 is implicitly given a uniform volume prior, i.e. each entity (single cell) is expected to occupy the same
 volume of space in the target. This makes eminent sense for single-cell data, of course, since
 cells are likely to be roughly uniform in size.
@@ -48,7 +48,7 @@ It can also be significantly more robust (since cluster-level
 expression profiles are more robust than single-cell profiles). 
 
 As another example, Bone Fight could be used to map one set of single-cell clusters to another,
-under the assumption that they represent the same underlying reality. For example, this could
+under the assumption that they represent the same tissue. For example, this could
 be used to align mouse and human single-cell data from the same tissue.
 
 ## Views
@@ -164,8 +164,8 @@ spatial data).
 
 You can also transfer any other property of the source dataset in the same way. 
 For example, you can transfer genes from a source
-single-cell dataset to a spatial dataset where they were not measured. Just
-create a label tensor for the 'labels' (i.e. gene expression vectors)
+single-cell dataset to a target spatial dataset where they were not measured. Just
+create a tensor for the 'labels' (i.e. gene expression vectors)
 you want to transfer, and call `model.transform(labels)`. Note that the shape of
 the labels tensor must match the shape of the source dataset in the first N - 1
 dimensions, and the last dimension should be the number of different labels you want
