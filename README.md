@@ -1,10 +1,12 @@
 # Bone Fight
 
-A Python package for generalized alignment of omics datasets.
+A Python package for generalized volumetric alignment of omics datasets.
 
-Bone Fight can be used to create a probabilistic map that relates one omics dataset
+Bone Fight can be used to create a probabilistic map that relates one comprehensive omics dataset
 to another; this map can then be used to transfer properties from the source dataset
-to the target dataset.
+to the target dataset. The source and target datasets are assumed to be 'comprehensive', i.e. they
+both cover the same sample (tissue, organ, organoid, cell line, etc.) completely, albeit with potentially 
+different resolution and parcellation into voxels, clusters, single cells etc.
 
 ![Ostomachion](Ostomachion2.jpg)
 
@@ -86,7 +88,7 @@ pip install -e .
 ### Preparations
 
 BoneFight needs a source dataset and a target dataset. Both datasets comprise an expression
-tensor and a volume vector. 
+tensor and a volume tensor. 
 
 The expression tensors can be multidimensional, but the last dimension
 must contain the features (e.g. genes). For example, the source tensor can be a single-cell
@@ -98,7 +100,7 @@ words, the last dimension of source and target tensors must contain the same fea
 in the same order. For example, if the spatial dataset contains 100 genes, then you must
 include only those same 100 genes, in the same order, in the single-cell dataset. 
 
-The volume vector is used to define the expected volume (in a general sense) of each entity
+The volume tensor is used to define the expected volume (in a general sense) of each entity
 in a dataset. For example, in a spatial dataset you may have some voxels that are known not to
 contain any cells; set their volumes to zero. You may also have some prior knowledge about the
 expected density of cells in a voxel, e.g. based on total spot counts, or counts of nuclei.
