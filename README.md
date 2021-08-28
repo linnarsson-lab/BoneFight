@@ -117,7 +117,7 @@ sum to one internally anyway. Thus you can also think of volume priors as densit
 To train a model, create the source and target views:
 
 ```python
-import bonefight as bf
+import bone_fight as bf
 a = bf.View(tensor_a, volumes_a)
 b = bf.View(tensor_b, volumes_b)
 model = bf.BoneFight(a, b)
